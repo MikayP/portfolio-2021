@@ -39,4 +39,3 @@ function add_featured_image_support_to_your_wordpress_theme() {
 register_nav_menus( [ 'primary' => __( 'Primary Menu' ) ] );
 
 
-
