@@ -4,10 +4,12 @@ Author: Mike Portman
 Version: 1.0
 */
 
+
+@import './library/css/media_queries.scss';
 body {
 
-
-    background-color: rgba(255, 0, 0, 0.427) !important;
+    background-color: #fff;
+    font-family:'Times New Roman', Times, serif;
   }
 
   nav{
@@ -23,7 +25,13 @@ body {
         margin:20px 10px;
     }
   }
-
+h1,h2{
+    text-align: center;
+}
+  h1{
+      font-size:3em;
+     
+  }
   @media(max-width:767px){
     .menu{
         // display:none ;
@@ -129,9 +137,7 @@ body {
        
 
         text-align: right;
-        .current-menu-item{
-    
-        }
+
         .menu{
             padding:10px 20px;
         }
@@ -146,12 +152,56 @@ body {
   // home
 
   #home{
-      .work-row{
-          h3{
-              height:375px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+
+      .post{
+          //desktop hover
+        &:hover{
+            .row-image{
+            &:before{
+            background-color:rgba(255,255,255, 0.75);
+            }
+            h3{
+                opacity:1;
+            }
           }
-      }
-  }
+        }
+          .row-image{
+            background-size:cover;
+            background-position: center;
+
+              &:before{
+                content: "";
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                bottom: 0px;
+                left: 0px;
+                background-color: rgba(255,255,255, 0.75);
+             
+              }
+              &:before,h3{
+                transition: .4s all ease-in-out;
+              }
+              h3{
+                height:375px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                font-size:2.5em;
+                text-align: center;
+            }
+          }
+        @include tablet_plus{
+            .row-image{
+                h3{
+                    opacity:0;
+                }
+                &:before{
+                    background-color:rgba(255,255,255, 0);
+                }
+            }
+        }
+    }
+    
+}

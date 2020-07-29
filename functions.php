@@ -1,8 +1,9 @@
 <?php
 
 function main_css(){
-    wp_enqueue_style('main_style', get_stylesheet_uri());
     wp_enqueue_style( 'bootstrap_css', get_stylesheet_directory_uri() . '/library/css/bootstrap.min.css' );
+    wp_enqueue_style('main_style', get_stylesheet_uri() );
+ 
 }
 
 function my_scripts() {
@@ -38,4 +39,7 @@ function add_featured_image_support_to_your_wordpress_theme() {
 
 register_nav_menus( [ 'primary' => __( 'Primary Menu' ) ] );
 
-
+function post_title_shortcode(){
+    return get_the_title();
+}
+add_shortcode('post_title','post_title_shortcode');
