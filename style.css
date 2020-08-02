@@ -46,6 +46,12 @@ body {
   font-family: 'Times New Roman', Times, serif;
 }
 
+@media (max-width: 767px) {
+  body {
+    margin-top: 80px;
+  }
+}
+
 nav {
   background-color: transparent;
 }
@@ -59,28 +65,52 @@ nav li {
   margin: 20px 10px;
 }
 
+nav .closebtn {
+  display: none;
+}
+
 .bg-image {
   background-size: cover;
   background-position: center;
 }
 
-@media (max-width: 767px) and (max-width: 767px) {
-  .menu {
-    text-align: right;
-    margin-top: 100px;
-    position: absolute;
-    right: 0%;
-    width: 100%;
-    background: red;
-    height: 100%;
-    left: 100vw;
-    z-index: 1;
-    -webkit-transition: all 400ms ease-in-out;
-    transition: all 400ms ease-in-out;
-  }
-}
-
 @media (max-width: 767px) {
+  .menu-menu-1-container {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .menu-menu-1-container a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .menu-menu-1-container .closebtn {
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .menu-menu-1-container .menu {
+    margin-top: 5em;
+  }
+  .full-width {
+    width: 100%;
+  }
   .hamburger {
     position: absolute;
     top: 10%;
@@ -89,6 +119,7 @@ nav li {
             transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
+    z-index: 2;
     background: #fff;
     -webkit-box-shadow: 0 5pc 10pc rgba(0, 0, 0, 0.5);
             box-shadow: 0 5pc 10pc rgba(0, 0, 0, 0.5);

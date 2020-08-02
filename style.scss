@@ -12,6 +12,9 @@ body {
 
     background-color: #fff;
     font-family:'Times New Roman', Times, serif;
+    @include mobile{
+        margin-top:80px;
+    }
   }
 
   nav{
@@ -24,6 +27,9 @@ body {
         list-style: none;
         margin:20px 10px;
     }
+    .closebtn{
+        display:none;
+    }
   }
     .bg-image{
         background-size:cover;
@@ -31,21 +37,42 @@ body {
 
     }
   @include mobile{
-    .menu{
-        // display:none ;
-        @include mobile{
-            text-align: right;
-            margin-top: 100px;
-            position: absolute;
-            right: 0%;
-            width: 100%;
-            background: red;
-            height: 100%;
-            left: 100vw;
-            z-index: 1;
-            transition:all 400ms ease-in-out;
-        }
+      
+    .menu-menu-1-container{
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
 
+        a{
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .closebtn {
+            display:block;
+            position: absolute;
+            top: 45px;
+            right: 20px;
+            font-size: 36px;
+            margin-left: 50px;
+
+          }
+        .menu{
+            margin-top:5em;
+        }
+    }
+    .full-width{
+        width:100%;
     }
 .hamburger {
     position: absolute;
@@ -54,6 +81,7 @@ body {
     transform: translate(-50%, -50%);
     width: 50px;
     height: 50px;
+    z-index:2;
     background: #fff;
     box-shadow: 0 5pc 10pc rgba(0, 0, 0, .5);
     border-radius: 2px;
