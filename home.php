@@ -9,10 +9,8 @@ get_header(); ?>
 
 <div id="primary" class="site-content">
   <div id="home" role="main">
-  <h1>Hi, I’m Mike! <br>
-   I’m a Web Developer at Sailpoint. <br>
-   Previously at Harris Media.</h1>
- <!-- <h1><?php single_post_title(); ?></h1> -->
+ 
+<h1><?php the_field('title'); ?></h1> 
  <?php
  while( have_posts() ):
   the_post();
@@ -21,7 +19,7 @@ endwhile; wp_reset_postdata();
 ?>
 <div class="row work-row">
 
-<h2>SOME OF MY CURRENT & PAST WORK</h2>
+<h2>SOME OF MY WORK</h2>
 <?php $custom_query = new WP_Query('cat=2'); 
 while($custom_query->have_posts()) : $custom_query->the_post(); ?>
     <a  href="test" <?php post_class(); ?> id="post-<?php the_ID(); ?>" target="_blank">
