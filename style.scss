@@ -6,6 +6,8 @@ Version: 1.0
 
 
 @import './library/css/media_queries.scss';
+@import './library/css/font_styling.scss';
+
 body {
 
     background-color: #fff;
@@ -13,10 +15,8 @@ body {
   }
 
   nav{
-  
     background-color: transparent;
 
-    
     .in-view{
         left:0vw !important;
     }
@@ -25,18 +25,15 @@ body {
         margin:20px 10px;
     }
   }
-h1,h2{
-    text-align: center;
-}
-  h1{
-      font-size:3em;
-     
-  }
-  @media(max-width:767px){
+    .bg-image{
+        background-size:cover;
+       background-position: center;
+
+    }
+  @include mobile{
     .menu{
         // display:none ;
-        @media(max-width:767px){
-
+        @include mobile{
             text-align: right;
             margin-top: 100px;
             position: absolute;
@@ -140,23 +137,59 @@ h1,h2{
 
         .menu{
             padding:10px 20px;
+            display:flex;
+            justify-content: flex-end;
+            margin:20px 100px;
+            .home-page{
+                position: absolute;
+                left:30px;
+            }
+
         }
         li{
 
-            display:inline;
         }
       }
   }
 
+  // Footer
+
+  footer{
+      text-align:center;
+      a{
+          color:#333;
+          transition:.3s all ease-in-out;
+        i{    
+            font-size:3em;
+            margin:.5em;
+            @include tablet_plus{
+              margin:1em;
+            }
+  
+  
+        }
+      }
+
+  }
 
   // home
 
   #home{
+p{      
+    @include tablet_plus{
 
+        width:600px;
+    }  
+
+}
       .post{
+             color:#333;
+      
           //desktop hover
+        
         &:hover{
             .row-image{
+            
             &:before{
             background-color:rgba(255,255,255, 0.75);
             }
@@ -166,9 +199,7 @@ h1,h2{
           }
         }
           .row-image{
-            background-size:cover;
-            background-position: center;
-
+    
               &:before{
                 content: "";
                 position: absolute;
@@ -176,8 +207,8 @@ h1,h2{
                 right: 0px;
                 bottom: 0px;
                 left: 0px;
-                background-color: rgba(255,255,255, 0.75);
-             
+                background-color: rgba(255,255,255, 0);
+
               }
               &:before,h3{
                 transition: .4s all ease-in-out;
@@ -204,4 +235,47 @@ h1,h2{
         }
     }
     
+}
+
+// About
+#about{
+
+    .about-row{
+        display:flex;
+        flex-wrap: wrap;
+        margin:1em;
+        @include tablet_plus{
+            margin:2em 16em;
+        }
+  
+    
+        .content{
+            padding:13em 6em;
+            background-color: #f7f7f7;
+          
+            h1{
+                font-size:2.4em;
+                margin:0 0 10px;
+                
+            
+            }
+            p,h1{
+                text-align: left;
+                padding:0px;
+
+            }
+        }
+ 
+           
+    }
+
+    @include mobile{
+        .bg-image{
+            height:500px;
+        }
+        .content{
+            padding:2em !important;
+
+        }
+    }
 }

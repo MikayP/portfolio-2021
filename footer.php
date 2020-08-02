@@ -1,4 +1,10 @@
-<p>this is the footer</p>
+
+<footer>
+<a href=""><i class="fab fa-linkedin-in"></i></a>
+<a href=""><i class="fab fa-twitter"></i></a>
+<a href=""><i class="fas fa-envelope"></i></a>
+
+</footer>
 
 <?php wp_footer(); ?>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -8,6 +8,8 @@ function main_css(){
 
 function my_scripts() {
     // Register the script like this for a plugin:
+      
+    wp_enqueue_script( 'font_awesome', 'https://kit.fontawesome.com/e87fb6e1d4.js');
     wp_enqueue_script( 'bootstrap_js', get_template_directory_uri()  . '/library/js/bootstrap.min.js', array('jquery'), '1.0', true);
     wp_enqueue_script( 'main_js', get_template_directory_uri()  . '/library/js/main.js', array('jquery'), '1.0', true);
 }
