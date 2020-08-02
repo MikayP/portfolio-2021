@@ -160,11 +160,11 @@ h1 {
 }
 
 #home .post:hover .row-image:before {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 #home .post:hover .row-image h3 {
-  opacity: 0;
+  opacity: 1;
 }
 
 #home .post .row-image {
@@ -208,7 +208,7 @@ h1 {
     opacity: 0;
   }
   #home .post .row-image:before {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0);
   }
 }
 /*# sourceMappingURL=style.css.map */
