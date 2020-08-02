@@ -6,16 +6,17 @@ Version: 1.0
 
 
 @import './library/css/media_queries.scss';
-@import './library/css/font_styling.scss';
-
 body {
 
     background-color: #fff;
     font-family:'Times New Roman', Times, serif;
   }
+
   nav{
+  
     background-color: transparent;
 
+    
     .in-view{
         left:0vw !important;
     }
@@ -24,11 +25,18 @@ body {
         margin:20px 10px;
     }
   }
-
-  @include mobile{
+h1,h2{
+    text-align: center;
+}
+  h1{
+      font-size:3em;
+     
+  }
+  @media(max-width:767px){
     .menu{
         // display:none ;
-        @include mobile{
+        @media(max-width:767px){
+
             text-align: right;
             margin-top: 100px;
             position: absolute;
@@ -132,17 +140,10 @@ body {
 
         .menu{
             padding:10px 20px;
-            display:flex;
-            justify-content: flex-end;
-            margin:20px;
-            .home-page{
-                position: absolute;
-                left:30px;
-            }
-
         }
         li{
 
+            display:inline;
         }
       }
   }
@@ -153,10 +154,7 @@ body {
   #home{
 
       .post{
-             color:#333;
- 
           //desktop hover
-        
         &:hover{
             .row-image{
             
